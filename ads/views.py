@@ -41,7 +41,7 @@ class AddInfoCat(View):
                 name=data_ads["name"][i],
             )
             i += 1
-            return JsonResponse("Добавлен", safe=False, status=200)
+        return JsonResponse("Добавлен", safe=False, status=200)
 
 
 @method_decorator(csrf_exempt, name='dispatch')
