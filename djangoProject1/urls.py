@@ -42,6 +42,11 @@ urlpatterns = [
     path('ad/<int:pk>/upload_image/', views.AdUploadImageView.as_view()),
     path('api-auth/', include('rest_framework.urls')),
     path('user/', include('users.urls')),
+    path('selection/', views.SelectionListView.as_view()),
+    path('selection/<int:pk>/', views.SelectionRetrieveView.as_view()),
+    path('selection/create/', views.SelectionCreateView.as_view()),
+    path('selection/<int:pk>/update/', views.SelectionUpdateView.as_view()),
+    path('selection/<int:pk>/delete/', views.SelectionDeleteView.as_view()),
 ]
 
 urlpatterns += router.urls
