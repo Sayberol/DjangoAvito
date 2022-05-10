@@ -40,6 +40,8 @@ class Selection(models.Model):
     is_published = models.BooleanField(default=False),
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True),
     image = models.ImageField(upload_to='ads/', null=True, blank=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    items = models.ManyToManyField(Ad)
 
     class Meta:
         verbose_name = "Подборка"
